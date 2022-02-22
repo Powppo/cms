@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
-
+use App\Http\Controllers\CompanyProfile;
 
 
 /*
@@ -38,3 +38,44 @@ Route::get('/articles/{id}', function ($id) {
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+
+
+//Practicum 3
+//1
+Route::get('/', [CompanyProfile::class, 'index']);
+
+//2
+route::prefix('products')->group(function() {
+    route::get('/product_1', function() {      
+        return 'Product 1'; 
+    });
+
+    route::get('/product_2', function() {   
+        return 'Product 2';    
+    });
+
+    route::get('/product_3', function() {   
+        return 'Product 3';    
+    });
+});
+
+//3
+Route::get('/news/{name}', [CompanyProfile::class, 'news']);
+
+//4
+route::prefix('programs')->group(function() {
+    route::get('/program_1', function() {      
+        return 'Program 1'; 
+    });
+
+    route::get('/program_2', function() {   
+        return 'Program 2';    
+    });
+
+    route::get('/program_3', function() {   
+        return 'Program 3';    
+    });
+});
+
+//5
+Route::get('/aboutus', [CompanyProfile::class, 'aboutus']);
