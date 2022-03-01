@@ -79,3 +79,8 @@ route::prefix('programs')->group(function() {
 
 //5
 Route::get('/aboutus', [CompanyProfile::class, 'aboutus']);
+
+//JOBSHEET 3
+route::get('home', function() {      
+    return view ('homepage'); 
+});
