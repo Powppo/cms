@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CompanyProfile;
+use App\Http\Controllers\Restaurant;
+
 
 
 /*
@@ -79,3 +81,11 @@ route::prefix('programs')->group(function() {
 
 //5
 Route::get('/aboutus', [CompanyProfile::class, 'aboutus']);
+
+//JOBSHEET 3
+route::get('home', function() {      
+    return view ('homepage'); 
+});
+
+//JOBSHEET 4
+Route::get('/', [Restaurant::class, 'index']);
