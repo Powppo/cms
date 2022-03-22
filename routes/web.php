@@ -89,3 +89,7 @@ route::get('home', function() {
 
 //JOBSHEET 4
 Route::get('/', [Restaurant::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
