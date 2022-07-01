@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CompanyProfile;
 use App\Http\Controllers\Restaurant;
-
+use App\Http\Controllers\ArticleController;
 
 
 /*
@@ -20,6 +19,11 @@ use App\Http\Controllers\Restaurant;
 |
 */
 
+
+//JOBSHEET 10
+Route::resource('articles', ArticleController::class);
+Route::get('article/print_pdf', [ArticleController::class, 'print_pdf'])->name('print_pdf');
+/*
 //JOBSHEET 2
 //Practicum 1
 Route::get('/', function () {
@@ -93,3 +97,4 @@ Route::get('/', [Restaurant::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/
